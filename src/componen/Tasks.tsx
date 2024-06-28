@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Card from './Card';
-import '../App.css';
+// import '../App.css';
+import { DropResult } from 'react-beautiful-dnd';
 
 interface Task {
   id: number;
@@ -39,6 +40,14 @@ const TodoWithCards: React.FC = () => {
       task.id === id ? { ...task, description: newDescription } : task
     );
     setTasks(updatedTasks);
+
+    const handleOnDragEnd = (result: DropResult) => {
+      if (!result.destination) return;
+      const newData = Array.from(tasks);
+      const [draggedItem] = newData.splice(result.source.index, 1);
+      newData.splice(result.destination.index, 0, draggedItem);
+      setTasks(newData);
+    };
   };
 
   return (

@@ -1,0 +1,36 @@
+.dnd-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .task-list {
+    width: 300px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .task-list li {
+    margin-bottom: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s;
+  }
+  
+  .task-list li:hover {
+    background-color: #e0e0e0;
+  }
+  
